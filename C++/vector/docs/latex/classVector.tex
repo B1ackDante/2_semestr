@@ -1,0 +1,355 @@
+\hypertarget{classVector}{}\section{Vector$<$ data $>$ Class Template Reference}
+\label{classVector}\index{Vector$<$ data $>$@{Vector$<$ data $>$}}
+
+
+Type \hyperlink{classVector}{Vector}. Effective in speed, but spends a lot of memory.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVector_ae1d85ad40c4838dca7b39d4083a16c8f}\label{classVector_ae1d85ad40c4838dca7b39d4083a16c8f}} 
+\hyperlink{classVector_ae1d85ad40c4838dca7b39d4083a16c8f}{Vector} ()
+\begin{DoxyCompactList}\small\item\em constructor  create a \hyperlink{classVector}{Vector} with size = 0 \end{DoxyCompactList}\item 
+\hyperlink{classVector_aba82b0f3e3fd3d17bf2d19b04a8361b7}{Vector} (int \hyperlink{classVector_a81b1d973485244101caf8e901b4a03d9}{size})
+\begin{DoxyCompactList}\small\item\em constructor  creates a vector with a defined size \end{DoxyCompactList}\item 
+\hyperlink{classVector_aede0f97bf9e72a66047d90ad8246ded1}{Vector} (int \hyperlink{classVector_a81b1d973485244101caf8e901b4a03d9}{size}, int value)
+\begin{DoxyCompactList}\small\item\em constructor  creates a vector with a defined size. All numbers in the vector are equal value \end{DoxyCompactList}\item 
+\hyperlink{classVector_a90cdb4e859d9802e381050fa5ef7b1b7}{Vector} (int \hyperlink{classVector_a81b1d973485244101caf8e901b4a03d9}{size}, data $\ast$arr)
+\begin{DoxyCompactList}\small\item\em constructor  creates a vector with a defined size. Numbers in the vector are equal numbers in the array arr \end{DoxyCompactList}\item 
+\hyperlink{classVector_a7d21adde41c251063fb47f08fc07b870}{Vector} (const \hyperlink{classVector}{Vector} \&arr)
+\begin{DoxyCompactList}\small\item\em copy constructor  deeply copies one vector to another \end{DoxyCompactList}\item 
+\hyperlink{classVector_a729b947a5289bca0be614283775f0442}{Vector} (\hyperlink{classVector}{Vector} \&\&arr)
+\begin{DoxyCompactList}\small\item\em move constructor  superficially copies the temporary vector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_afc7759d16cde34ac4a776b501906e0b0}\label{classVector_afc7759d16cde34ac4a776b501906e0b0}} 
+\hyperlink{classVector_afc7759d16cde34ac4a776b501906e0b0}{$\sim$\+Vector} ()
+\begin{DoxyCompactList}\small\item\em destructor  free \hyperlink{classVector}{Vector} \end{DoxyCompactList}\item 
+data \& \hyperlink{classVector_ad3af3ead835defe8350ec5ddb68d225b}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\begin{DoxyCompactList}\small\item\em index operator  returns the value of an item by its index \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \& \hyperlink{classVector_ad590318f018fb780fb6798ba4d5c951a}{operator=} (const \hyperlink{classVector}{Vector} \&array)
+\begin{DoxyCompactList}\small\item\em copy operator  deeply copies one vector to another \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \& \hyperlink{classVector_a95cd9901161724fd71b3968bb72c3906}{operator=} (\hyperlink{classVector}{Vector} \&\&array)
+\begin{DoxyCompactList}\small\item\em move operator  superficially copies the temporary vector \end{DoxyCompactList}\item 
+void \hyperlink{classVector_a8e34f2f9943752507540bc80dba453fd}{push\+\_\+back} (data elem)
+\begin{DoxyCompactList}\small\item\em push  inserts an element at the end of a \hyperlink{classVector}{Vector} \end{DoxyCompactList}\item 
+data \hyperlink{classVector_af58fb997ed40663eb1e9f17b96cbc846}{pop\+\_\+back} (void)
+\begin{DoxyCompactList}\small\item\em pop  returns an element from the end of a vector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_a9a4aa65c1485541c654f3917cc4d37e9}\label{classVector_a9a4aa65c1485541c654f3917cc4d37e9}} 
+void \hyperlink{classVector_a9a4aa65c1485541c654f3917cc4d37e9}{clear} (void)
+\begin{DoxyCompactList}\small\item\em clear \hyperlink{classVector}{Vector} \end{DoxyCompactList}\item 
+int \hyperlink{classVector_a81b1d973485244101caf8e901b4a03d9}{size} (void) const
+\item 
+bool \hyperlink{classVector_ae203aae4d9a6dbabd4883c9e6fd84f79}{empty} (void)
+\begin{DoxyCompactList}\small\item\em checks if \hyperlink{classVector}{Vector} is empty \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{classVector_a443e08072f54a08e6c4eaaab66d25a3d}{operator new} (size\+\_\+t \hyperlink{classVector_a81b1d973485244101caf8e901b4a03d9}{size}, const char $\ast$file, const char $\ast$func, int line, ofstream \&os)
+\begin{DoxyCompactList}\small\item\em operator N\+EW  Made to check for memory leaks. Prints detailed information about its use in a file. \end{DoxyCompactList}\item 
+void \hyperlink{classVector_a7994afefee442d3980f1b1125152fe50}{operator delete} (void $\ast$pointer)
+\begin{DoxyCompactList}\small\item\em operator D\+E\+L\+E\+TE  Made to check for memory leaks. Prints detailed information about its use in a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classVector_afa2a3c5660a7a34794975a6bb80d175f}{increase} ()
+\begin{DoxyCompactList}\small\item\em increases buffer  increases buffer by cap\+\_\+increase, if there is not enough space \end{DoxyCompactList}\item 
+bool \hyperlink{classVector_a770a5b403dcb82ea6954cda918d278d6}{decrease} ()
+\begin{DoxyCompactList}\small\item\em decrease buffer  decrease buffer by cap\+\_\+decrease, if a lot of free space \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVector_a22db58ae9e92c6014e8ac657804a035a}\label{classVector_a22db58ae9e92c6014e8ac657804a035a}} 
+data $\ast$ \hyperlink{classVector_a22db58ae9e92c6014e8ac657804a035a}{buffer\+\_\+}
+\begin{DoxyCompactList}\small\item\em pointer to data buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_a3c70fa478530a90177f2a7e7621ee688}\label{classVector_a3c70fa478530a90177f2a7e7621ee688}} 
+int \hyperlink{classVector_a3c70fa478530a90177f2a7e7621ee688}{size\+\_\+}
+\begin{DoxyCompactList}\small\item\em number of elements in the buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_ad75911bb39018821f0e2911b6905b7ec}\label{classVector_ad75911bb39018821f0e2911b6905b7ec}} 
+int \hyperlink{classVector_ad75911bb39018821f0e2911b6905b7ec}{capacity\+\_\+}
+\begin{DoxyCompactList}\small\item\em buffer capacity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_a1a14de1885d52d2cbe3259a865b32e7b}\label{classVector_a1a14de1885d52d2cbe3259a865b32e7b}} 
+int \hyperlink{classVector_a1a14de1885d52d2cbe3259a865b32e7b}{cap\+\_\+increase} = 2
+\begin{DoxyCompactList}\small\item\em buffer increase ratio \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_a8d3afe7fa8f956f73f37772b15548293}\label{classVector_a8d3afe7fa8f956f73f37772b15548293}} 
+int \hyperlink{classVector_a8d3afe7fa8f956f73f37772b15548293}{cap\+\_\+decrease} = 0.\+5
+\begin{DoxyCompactList}\small\item\em buffer decrease ratio \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename data$>$\newline
+class Vector$<$ data $>$}
+
+Type \hyperlink{classVector}{Vector}. Effective in speed, but spends a lot of memory. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVector_aba82b0f3e3fd3d17bf2d19b04a8361b7}\label{classVector_aba82b0f3e3fd3d17bf2d19b04a8361b7}} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+\hyperlink{classVector}{Vector}$<$ data $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+constructor  creates a vector with a defined size 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & size of \hyperlink{classVector}{Vector} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVector_aede0f97bf9e72a66047d90ad8246ded1}\label{classVector_aede0f97bf9e72a66047d90ad8246ded1}} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+\hyperlink{classVector}{Vector}$<$ data $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+constructor  creates a vector with a defined size. All numbers in the vector are equal value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & size of \hyperlink{classVector}{Vector} \\
+\hline
+\mbox{\tt in}  & {\em value} & the value that fills the \hyperlink{classVector}{Vector} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVector_a90cdb4e859d9802e381050fa5ef7b1b7}\label{classVector_a90cdb4e859d9802e381050fa5ef7b1b7}} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+\hyperlink{classVector}{Vector}$<$ data $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{data $\ast$}]{arr }\end{DoxyParamCaption})}
+
+
+
+constructor  creates a vector with a defined size. Numbers in the vector are equal numbers in the array arr 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & size of \hyperlink{classVector}{Vector} \\
+\hline
+\mbox{\tt in}  & {\em arr} & array that fills the \hyperlink{classVector}{Vector} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVector_a7d21adde41c251063fb47f08fc07b870}\label{classVector_a7d21adde41c251063fb47f08fc07b870}} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+\hyperlink{classVector}{Vector}$<$ data $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ data $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+
+
+copy constructor  deeply copies one vector to another 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classVector}{Vector}} & copy \hyperlink{classVector}{Vector} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVector_a729b947a5289bca0be614283775f0442}\label{classVector_a729b947a5289bca0be614283775f0442}} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+\hyperlink{classVector}{Vector}$<$ data $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{\hyperlink{classVector}{Vector}$<$ data $>$ \&\&}]{vec }\end{DoxyParamCaption})}
+
+
+
+move constructor  superficially copies the temporary vector 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classVector}{Vector}} & copy \hyperlink{classVector}{Vector} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVector_a770a5b403dcb82ea6954cda918d278d6}\label{classVector_a770a5b403dcb82ea6954cda918d278d6}} 
+\index{Vector@{Vector}!decrease@{decrease}}
+\index{decrease@{decrease}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{decrease()}{decrease()}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+bool \hyperlink{classVector}{Vector}$<$ data $>$\+::decrease (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+decrease buffer  decrease buffer by cap\+\_\+decrease, if a lot of free space 
+
+\begin{DoxyReturn}{Returns}
+true if decrease success false if decrease error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_ae203aae4d9a6dbabd4883c9e6fd84f79}\label{classVector_ae203aae4d9a6dbabd4883c9e6fd84f79}} 
+\index{Vector@{Vector}!empty@{empty}}
+\index{empty@{empty}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+bool \hyperlink{classVector}{Vector}$<$ data $>$\+::empty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+checks if \hyperlink{classVector}{Vector} is empty 
+
+\begin{DoxyReturn}{Returns}
+true if \hyperlink{classVector}{Vector} is empty false if \hyperlink{classVector}{Vector} isn\textquotesingle{}t empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_afa2a3c5660a7a34794975a6bb80d175f}\label{classVector_afa2a3c5660a7a34794975a6bb80d175f}} 
+\index{Vector@{Vector}!increase@{increase}}
+\index{increase@{increase}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{increase()}{increase()}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+bool \hyperlink{classVector}{Vector}$<$ data $>$\+::increase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+increases buffer  increases buffer by cap\+\_\+increase, if there is not enough space 
+
+\begin{DoxyReturn}{Returns}
+true if increase success false if increase error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a7994afefee442d3980f1b1125152fe50}\label{classVector_a7994afefee442d3980f1b1125152fe50}} 
+\index{Vector@{Vector}!operator delete@{operator delete}}
+\index{operator delete@{operator delete}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator delete()}{operator delete()}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+void \hyperlink{classVector}{Vector}$<$ data $>$\+::operator delete (\begin{DoxyParamCaption}\item[{void $\ast$}]{pointer }\end{DoxyParamCaption})}
+
+
+
+operator D\+E\+L\+E\+TE  Made to check for memory leaks. Prints detailed information about its use in a file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pointer} & pointer to free data \\
+\hline
+\mbox{\tt in}  & {\em file} & the name of the file from which it is called D\+E\+L\+E\+TE \\
+\hline
+\mbox{\tt in}  & {\em func} & the name of the function from which it is called D\+E\+L\+E\+TE \\
+\hline
+\mbox{\tt in}  & {\em line} & the name of the line from which it is called D\+E\+L\+E\+TE \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVector_a443e08072f54a08e6c4eaaab66d25a3d}\label{classVector_a443e08072f54a08e6c4eaaab66d25a3d}} 
+\index{Vector@{Vector}!operator new@{operator new}}
+\index{operator new@{operator new}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator new()}{operator new()}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+void $\ast$ \hyperlink{classVector}{Vector}$<$ data $>$\+::operator new (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{const char $\ast$}]{file,  }\item[{const char $\ast$}]{func,  }\item[{int}]{line,  }\item[{ofstream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+operator N\+EW  Made to check for memory leaks. Prints detailed information about its use in a file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & the number of bytes to initialize \\
+\hline
+\mbox{\tt in}  & {\em file} & the name of the file from which it is called N\+EW \\
+\hline
+\mbox{\tt in}  & {\em func} & the name of the function from which it is called N\+EW \\
+\hline
+\mbox{\tt in}  & {\em line} & the name of the line from which it is called N\+EW \\
+\hline
+\mbox{\tt in}  & {\em os} & information stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the alloсated place in memory 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_ad590318f018fb780fb6798ba4d5c951a}\label{classVector_ad590318f018fb780fb6798ba4d5c951a}} 
+\index{Vector@{Vector}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+\hyperlink{classVector}{Vector}$<$ data $>$ \& \hyperlink{classVector}{Vector}$<$ data $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ data $>$ \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+copy operator  deeply copies one vector to another 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classVector}{Vector}} & copy \hyperlink{classVector}{Vector} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVector_a95cd9901161724fd71b3968bb72c3906}\label{classVector_a95cd9901161724fd71b3968bb72c3906}} 
+\index{Vector@{Vector}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+\hyperlink{classVector}{Vector}$<$ data $>$ \& \hyperlink{classVector}{Vector}$<$ data $>$\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classVector}{Vector}$<$ data $>$ \&\&}]{vector }\end{DoxyParamCaption})}
+
+
+
+move operator  superficially copies the temporary vector 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classVector}{Vector}} & copy \hyperlink{classVector}{Vector} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVector_ad3af3ead835defe8350ec5ddb68d225b}\label{classVector_ad3af3ead835defe8350ec5ddb68d225b}} 
+\index{Vector@{Vector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+data \& \hyperlink{classVector}{Vector}$<$ data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+index operator  returns the value of an item by its index 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_af58fb997ed40663eb1e9f17b96cbc846}\label{classVector_af58fb997ed40663eb1e9f17b96cbc846}} 
+\index{Vector@{Vector}!pop\+\_\+back@{pop\+\_\+back}}
+\index{pop\+\_\+back@{pop\+\_\+back}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{pop\+\_\+back()}{pop\_back()}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+data \hyperlink{classVector}{Vector}$<$ data $>$\+::pop\+\_\+back (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+pop  returns an element from the end of a vector 
+
+\begin{DoxyReturn}{Returns}
+element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a8e34f2f9943752507540bc80dba453fd}\label{classVector_a8e34f2f9943752507540bc80dba453fd}} 
+\index{Vector@{Vector}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{push\+\_\+back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+void \hyperlink{classVector}{Vector}$<$ data $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{data}]{elem }\end{DoxyParamCaption})}
+
+
+
+push  inserts an element at the end of a \hyperlink{classVector}{Vector} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em elem} & insert element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVector_a81b1d973485244101caf8e901b4a03d9}\label{classVector_a81b1d973485244101caf8e901b4a03d9}} 
+\index{Vector@{Vector}!size@{size}}
+\index{size@{size}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename data $>$ \\
+int \hyperlink{classVector}{Vector}$<$ data $>$\+::size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classVector}{Vector} size 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{vector_8cpp}{vector.\+cpp}\end{DoxyCompactItemize}
