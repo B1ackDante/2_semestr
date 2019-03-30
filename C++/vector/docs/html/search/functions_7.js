@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vector',['Vector',['../classVector.html#ae1d85ad40c4838dca7b39d4083a16c8f',1,'Vector::Vector()'],['../classVector.html#aba82b0f3e3fd3d17bf2d19b04a8361b7',1,'Vector::Vector(int size)'],['../classVector.html#aede0f97bf9e72a66047d90ad8246ded1',1,'Vector::Vector(int size, int value)'],['../classVector.html#a90cdb4e859d9802e381050fa5ef7b1b7',1,'Vector::Vector(int size, data *arr)'],['../classVector.html#a7d21adde41c251063fb47f08fc07b870',1,'Vector::Vector(const Vector &amp;arr)'],['../classVector.html#a729b947a5289bca0be614283775f0442',1,'Vector::Vector(Vector &amp;&amp;arr)']]]
+  ['size',['size',['../classVector_3_01bool_01_4.html#acb9a245334b171ea1ad0d9bda20da76e',1,'Vector&lt; bool &gt;::size()'],['../classVector.html#a81b1d973485244101caf8e901b4a03d9',1,'Vector::size()']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['clear',['clear',['../classVector.html#a9a4aa65c1485541c654f3917cc4d37e9',1,'Vector']]]
+  ['boolreference',['BoolReference',['../classVector_3_01bool_01_4_1_1BoolReference.html#a7b319cb4b874379cbeb6d303b5d323eb',1,'Vector&lt; bool &gt;::BoolReference']]]
 ];

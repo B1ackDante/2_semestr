@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['binary_5foperators_2ecpp',['binary_operators.cpp',['../binary__operators_8cpp.html',1,'']]],
+  ['bool_5fvector_2ecpp',['bool_vector.cpp',['../bool__vector_8cpp.html',1,'']]]
 ];

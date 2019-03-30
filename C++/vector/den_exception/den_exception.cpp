@@ -33,7 +33,7 @@ class DenException
           DONT_HAVE_MEMORY    = 6
         };
 
-      DenException(const char* filename, const char* func, const long int line, char* message, exception_code_e exc_code);
+      DenException(const char* filename, const char* func, const long int line, const char* message, exception_code_e exc_code);
       DenException(const DenException& except);
       DenException(DenException&& except);
       ~DenException(void);
@@ -64,7 +64,7 @@ class DenException
  *  @param[in] message
  *  @param[in] exc_code
  */
-DenException::DenException(const char* filename, const char* func, const long int line, char* message = NULL, exception_code_e exc_code = UNTITLED)
+DenException::DenException(const char* filename, const char* func, const long int line, const char* message = NULL, exception_code_e exc_code = UNTITLED)
   {
     filename_ = strdup(filename);
     func_     = strdup(func);

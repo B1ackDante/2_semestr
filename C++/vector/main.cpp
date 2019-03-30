@@ -10,18 +10,20 @@
 
 int main(void)
 	{
-		int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-		Vector<int> a(10, arr);
-		Vector<int> b(10, 2);
-		Vector<int> c(30);
+		try
+			{
+				Vector<bool> a1(64, true);
+				bool b = a1[2] = false;
+				a1[62] = false;
+				std::cout << a1 << '\n';
+				std::cout << b << '\n';
+			}
+		catch(DenException& except)
+			{
+				except.where(std::cout);
+				except.what(std::cout);
+				except.code(std::cout);
+			}
 
-		Vector<int>* d = NEW Vector<int>;
-
-		c = a * 5;
-
-		a[3] = 5;
-
-		cout << a << endl;
-
-		DELETE(d);
+		return 0;
 	}

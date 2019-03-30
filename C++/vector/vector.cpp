@@ -11,8 +11,10 @@
 
 #include <iostream>
 #include <fstream>
-using namespace std;
 #include <assert.h>
+
+#include "den_exception/den_exception.cpp"
+#define DEN_EXCEPTION(message, exc_code) DenException(__FILE__, __func__, __LINE__, message, exc_code)
 
 //{========================================================================================================
 /**
@@ -28,34 +30,34 @@ class Vector
 			int size_;			///< number of elements in the buffer
 			int capacity_;	///< buffer capacity
 
-			int cap_increase = 2;			///< buffer increase ratio
-			int cap_decrease = 0.5;		///< buffer decrease ratio
+			double cap_increase = 2.0;			///< buffer increase ratio
+			double cap_decrease = 0.5;		  ///< buffer decrease ratio
 
-			bool increase();
-			bool decrease();
+			bool increase() throw();
+			bool decrease() throw();
 
 		public:
 
 			Vector();
-			Vector(int size);
-			Vector(int size, int value);
-			Vector(int size, data* arr);
-			Vector(const Vector& arr);
-			Vector(Vector&& arr);
+			Vector(int size) 												throw(DenException);
+			Vector(int size, int value) 						throw(DenException);
+			Vector(int size, data* arr)							throw(DenException);
+			Vector(const Vector& arr)								throw(DenException);
+			Vector(Vector&& arr)										throw(DenException);
 			~Vector();
 
-			data& operator[](int index) const;
-			Vector& operator=(const Vector& array);
-			Vector& operator=(Vector&& array);
+			data& operator[](int index) const				throw(DenException);
+			Vector& operator=(const Vector& vector)	throw(DenException);
+			Vector& operator=(Vector&& vector)			throw(DenException);
 
-			void push_back(data elem);
-			data pop_back(void);
+			void push_back(data elem)								throw(DenException);
+			data pop_back(void)											throw(DenException);
 
 			void clear(void);
 			int size(void) const;
 			bool empty(void);
 
-			void *operator new(size_t size, const char* file, const char* func, int line, ofstream& os);
+			void *operator new(size_t size, const char* file, const char* func, int line, std::ofstream& os);
 			void operator delete(void *pointer);
 	};
 //}========================================================================================================
@@ -69,17 +71,28 @@ class Vector
  *					false if increase error
  */
 template <typename data>
-bool Vector<data>::increase()
+bool Vector<data>::increase() throw()
 	{
-		data* ptr = (data* )realloc(buffer_, sizeof(data)*cap_increase*size_);
-
-		if(ptr != NULL)
+		try
 			{
+				data* ptr = (data* )realloc(buffer_, sizeof(data)*cap_increase*size_);
+
+				if(ptr == NULL)
+					throw DEN_EXCEPTION("Realloc memory error!!!", DenException::exception_code_e::DONT_HAVE_MEMORY);
+
 				buffer_ = ptr;
 				capacity_ = cap_increase * size_;
+
 				return true;
 			}
-		else	return false;
+		catch(DenException& except)
+			{
+				except.where(std::cout);
+				except.what(std::cout);
+				except.code(std::cout);
+
+				return false;
+			}
 	}
 //}========================================================================================================
 
@@ -92,22 +105,33 @@ bool Vector<data>::increase()
  *					false if decrease error
  */
 template <typename data>
-bool Vector<data>::decrease()
+bool Vector<data>::decrease() throw()
 	{
-		data* ptr = (data* )realloc(buffer_, sizeof(data)*cap_decrease*size_);
-
-		if(ptr != NULL)
+		try
 			{
+				data* ptr = (data* )realloc(buffer_, sizeof(data)*cap_decrease*size_);
+
+				if(ptr == NULL)
+					throw DEN_EXCEPTION("Realloc memory error!!!", DenException::exception_code_e::DONT_HAVE_MEMORY);
+
 				buffer_ = ptr;
 				capacity_ = cap_decrease * size_;
+
 				return true;
 			}
-		else	return false;
+		catch(DenException& except)
+			{
+				except.where(std::cout);
+				except.what(std::cout);
+				except.code(std::cout);
+
+				return false;
+			}
 	}
 //}========================================================================================================
 
 
-//{}========================================================================================================
+//{========================================================================================================
 /**
  * 	@brief constructor
  *	@detailed create a Vector with size = 0
@@ -123,13 +147,24 @@ Vector<data>::Vector()
  * 	@brief constructor
  *	@detailed creates a vector with a defined size
  *	@param[in] size size of Vector
+ *	@throw DenException
  */
 template <typename data>
-Vector<data>::Vector(int size)
+Vector<data>::Vector(int size)	throw(DenException)
 	{
 		size_ = size;
 		capacity_ = size*cap_increase;
-		buffer_ = (data*) calloc(capacity_, sizeof(data));
+
+		try
+			{
+				buffer_ = (data*) calloc(capacity_, sizeof(data));
+				if(buffer_ == NULL)
+					throw(DEN_EXCEPTION("Calloc memory error!!!", DenException::exception_code_e::DONT_HAVE_MEMORY));
+			}
+		catch(DenException& except)
+			{
+				throw;
+			}
 	}
 
 /**
@@ -137,13 +172,24 @@ Vector<data>::Vector(int size)
  *	@detailed creates a vector with a defined size. All numbers in the vector are equal value
  *	@param[in] size size of Vector
  * 	@param[in] value the value that fills the Vector
+ *	@throw DenException
  */
 template <typename data>
-Vector<data>::Vector(int size, int value)
+Vector<data>::Vector(int size, int value) throw(DenException)
 	{
 		size_ = size;
 		capacity_ = size*cap_increase;
-		buffer_ = (data*) calloc(capacity_, sizeof(data));
+
+		try
+			{
+				buffer_ = (data*) calloc(capacity_, sizeof(data));
+				if(buffer_ == NULL)
+					throw(DEN_EXCEPTION("Calloc memory error!!!", DenException::exception_code_e::DONT_HAVE_MEMORY));
+			}
+		catch(DenException& except)
+			{
+				throw;
+			}
 
 		for (int i = 0; i < size; i++)
 			buffer_[i] = value;
@@ -154,13 +200,28 @@ Vector<data>::Vector(int size, int value)
  *	@detailed creates a vector with a defined size. Numbers in the vector are equal numbers in the array arr
  *	@param[in] size size of Vector
  * 	@param[in] arr array that fills the Vector
+ *	@throw DenException
  */
 template <typename data>
-Vector<data>::Vector(int size, data* arr)
+Vector<data>::Vector(int size, data* arr) throw(DenException)
 	{
 		size_ = size;
 		capacity_ = size*cap_increase;
-		buffer_ = (data*) calloc(capacity_, sizeof(data));
+
+		try
+			{
+				if(arr == NULL)
+					throw(DEN_EXCEPTION("Array pointer is NULL!!!", DenException::exception_code_e::NULL_POINTER));
+
+				buffer_ = (data*) calloc(capacity_, sizeof(data));
+
+				if(buffer_ == NULL)
+					throw(DEN_EXCEPTION("Calloc memory error!!!", DenException::exception_code_e::DONT_HAVE_MEMORY));
+			}
+		catch(DenException& except)
+			{
+				throw;
+			}
 
 		for (int i = 0; i < size; i++)
 			buffer_[i] = arr[i];
@@ -170,27 +231,40 @@ Vector<data>::Vector(int size, data* arr)
  * 	@brief copy constructor
  *	@detailed deeply copies one vector to another
  *	@param[in] Vector copy Vector
+ *	@throw DenException
  */
 template <typename data>
-Vector<data>::Vector(const Vector& vec)
+Vector<data>::Vector(const Vector& vec) throw(DenException)
 	{
 		size_ = vec.size_;
 		capacity_ = size_*cap_increase;
-		buffer_ = (data*) calloc(capacity_, sizeof(data));
+
+		try
+			{
+				buffer_ = (data*) calloc(capacity_, sizeof(data));
+
+				if(buffer_ == NULL)
+					throw(DEN_EXCEPTION("Calloc memory error!!!", DenException::exception_code_e::DONT_HAVE_MEMORY));
+			}
+		catch(DenException& except)
+			{
+				throw;
+			}
 
 		for (int i = 0; i < vec.size(); i++)
 			buffer_[i] = vec.buffer_[i];
 
-		cout << "copy construct" << endl;
+		std::cout << "copy construct" << std::endl;
 	}
 
 /**
  * 	@brief move constructor
  *	@detailed superficially copies the temporary vector
  *	@param[in] Vector copy Vector
+ *	@throw DenException
  */
 	template <typename data>
-	Vector<data>::Vector(Vector&& vec)
+	Vector<data>::Vector(Vector&& vec) throw(DenException)
 		{
 			size_ = vec.size();
 			capacity_ = size_*cap_increase;
@@ -199,7 +273,7 @@ Vector<data>::Vector(const Vector& vec)
 			vec.size_ = 0;
 			vec.buffer_ = NULL;
 
-			cout << "move construct" << endl;
+			std::cout << "move construct" << std::endl;
 		}
 //}========================================================================================================
 
@@ -214,7 +288,7 @@ Vector<data>::~Vector()
 	{
 		free(buffer_);
 
-		cout << "destruct" << endl;
+		std::cout << "destruct" << std::endl;
 	}
 //}========================================================================================================
 
@@ -225,10 +299,21 @@ Vector<data>::~Vector()
  *	@detailed returns the value of an item by its index
  *	@param[in] index index
  *	@return value
+ *	@throw DenException
  */
 template <typename data>
-data& Vector<data>::operator[](int index) const
+data& Vector<data>::operator[](int index) const throw(DenException)
 	{
+		try
+			{
+				if(index >= size_)
+					throw(DEN_EXCEPTION("Index >= Vector size!!!", DenException::exception_code_e::ARRAY_OUT_OF_RANGE));
+			}
+		catch(DenException& except)
+			{
+				throw;
+			}
+
 		return buffer_[index];
 	}
 //}========================================================================================================
@@ -239,16 +324,29 @@ data& Vector<data>::operator[](int index) const
  * 	@brief copy operator
  *	@detailed deeply copies one vector to another
  *	@param[in] Vector copy Vector
+ *	@throw DenException
  */
 template <typename data>
-Vector<data>& Vector<data>::operator=(const Vector &vector)
+Vector<data>& Vector<data>::operator=(const Vector &vector) throw(DenException)
 	{
 		size_ = vector.size_;
-		buffer_ = (data* )realloc(buffer_, sizeof(vector.buffer_));
+		capacity_ = vector.capacity_;
+
+		try
+			{
+				buffer_ = (data* )realloc(buffer_, sizeof(vector.buffer_));
+
+				if(buffer_ == NULL)
+					throw(DEN_EXCEPTION("Calloc memory error!!!", DenException::exception_code_e::DONT_HAVE_MEMORY));
+			}
+		catch(DenException& except)
+			{
+				throw;
+			}
 
 		for(int i = 0; i < vector.size_; i++) buffer_[i] = vector.buffer_[i];
 
-		cout << "copy operator =" << endl;
+		std::cout << "copy operator =" << std::endl;
 
 		return *this;
 	}
@@ -257,17 +355,20 @@ Vector<data>& Vector<data>::operator=(const Vector &vector)
  * 	@brief move operator
  *	@detailed superficially copies the temporary vector
  *	@param[in] Vector copy Vector
+ *	@throw DenException
  */
 template <typename data>
-Vector<data>& Vector<data>::operator=(Vector &&vector)
+Vector<data>& Vector<data>::operator=(Vector &&vector) throw(DenException)
 		{
+
 			size_ = vector.size_;
+			capacity_ = vector.capacity_;
 			buffer_ = vector.buffer_;
 
 			vector.size_ = 0;
 			vector.buffer_= 0;
 
-			cout << "move operator =" << endl;
+			std::cout << "move operator =" << std::endl;
 
 			return *this;
 		}
@@ -279,14 +380,15 @@ Vector<data>& Vector<data>::operator=(Vector &&vector)
  *	@brief push
  *	@detailed inserts an element at the end of a Vector
  *	@param[in] elem insert element
+ * 	@throw DenException
  */
 template <typename data>
-void Vector<data>::push_back(data elem)
+void Vector<data>::push_back(data elem) throw(DenException)
 	{
 		if(size_ < capacity_) buffer_[size_++] = elem;
 		else
 			if(increase() == true)  buffer_[size_++] = elem;
-			else					cout << "Increase error" << endl;
+			else					std::cout << "Increase error" << std::endl;
 	}
 //}========================================================================================================
 
@@ -294,17 +396,20 @@ void Vector<data>::push_back(data elem)
 //{========================================================================================================
 /**
  *	@brief pop
- *	@detailed returns an element from the end of a vector
+ *	@detailed returns an element from the end of a Vector
  *	@return element
+ * 	@throw DenException
  */
 template <typename data>
-data Vector<data>::pop_back(void)
+data Vector<data>::pop_back(void) throw(DenException)
 	{
+		assert(size_ > 0);
+
 		if(size_ < capacity_ / 4)
 			if(decrease() == true)  return buffer_[size_--];
 			else
 				{
-					cout << "Decrease error" << endl;
+					std::cout << "Decrease error" << std::endl;
 					return NULL;
 				}
 
@@ -367,16 +472,16 @@ bool Vector<data>::empty(void)
  */
 
 template <typename data>
-void* Vector<data>::operator new(size_t size, const char* file, const char* func, int line, ofstream& os)
+void* Vector<data>::operator new(size_t size, const char* file, const char* func, int line, std::ofstream& os)
 	{
 		void* pointer = calloc(size, sizeof(char));
 
-		os << "N " << file << "|" << func << "|" << line << " " << pointer << endl;
+		os << "N " << file << "|" << func << "|" << line << " " << pointer << std::endl;
 
 		return pointer;
 	}
 
-	ofstream memory_leak("memory_leak/memory_leak.txt");
+	std::ofstream memory_leak("memory_leak/memory_leak.txt");
 	#define NEW new(__FILE__, __func__, __LINE__, memory_leak)
 //}========================================================================================================
 
@@ -390,125 +495,18 @@ void* Vector<data>::operator new(size_t size, const char* file, const char* func
  *	@param[in] func the name of the function from which it is called DELETE
  *	@param[in] line the name of the line from which it is called DELETE
  */
-
+template <typename data>
 void Vector<data>::operator delete(void *pointer)
 	{
 		free(pointer);
 	}
 
-#define DELETE(x)  memory_leak << "D " << __FILE__ << "|" << __func__ << "|" << __LINE__ << " " << x << endl; \
+#define DELETE(x)  memory_leak << "D " << __FILE__ << "|" << __func__ << "|" << __LINE__ << " " << x << std::endl; \
 	 			delete x;
-template <typename data>
 //}========================================================================================================
 
+#include "bool_vector.cpp"
 
-//{========================================================================================================
-/**
- *	@brief operator Vector + Vector
- * 	@param[in] v1 Vector1
- * 	@param[in] v2 Vector2
- *	@return result Vector
- */
-template <typename data>
-Vector<data> operator+(const Vector<data> &v1, const Vector<data> &v2)
-	{
-		assert(v1.size() == v2.size());
-		Vector<data> copy(v1.size());
-
-		for(int i = 0; i < v1.size(); i++) copy[i] = v1[i] + v2[i];
-
-		return copy;
-	}
-//}========================================================================================================
-
-
-//{========================================================================================================
-/**
- *	@brief operator Vector - Vector
- * 	@param[in] v1 Vector1
- * 	@param[in] v2 Vector2
- *	@return result Vector
- */
-template <typename data>
-Vector<data> operator-(const Vector<data> &v1, const Vector<data> &v2)
-	{
-		assert(v1.size() == v2.size());
-		Vector<data> copy(v1.size());
-
-		for(int i = 0; i < v1.size(); i++) copy[i] = v1[i] - v2[i];
-
-		return copy;
-	}
-//}========================================================================================================
-
-
-//{========================================================================================================
-/**
- *	@brief operator Vector * const
- * 	@param[in] v1 Vector1
- * 	@param[in] num const
- *	@return result Vector
- */
-template <typename data>
-Vector<data> operator*(const Vector<data> &v1, double num)
-	{
-		Vector<data> copy(v1.size());
-
-		for(int i = 0; i < v1.size(); i++) copy[i] = v1[i] * num;
-
-		return copy;
-	}
-//}========================================================================================================
-
-
-//{========================================================================================================
-/**
- *	@brief operator const * Vector
- * 	@param[in] num const
- * 	@param[in] v1 Vector1
- *	@return result Vector
- */
-template <typename data>
-Vector<data> operator*(double num, const Vector<data> &v1)
-	{
-		return v1 * num;
-	}
-//}========================================================================================================
-
-
-//{========================================================================================================
-/**
- *	@brief operator Vector / const
- * 	@param[in] v1 Vector1
- * 	@param[in] num const
- *	@return result Vector
- */
-template <typename data>
-Vector<data> operator/(const Vector<data> &v1, double num)
-	{
-		Vector<data> copy(v1.size());
-
-		for(int i = 0; i < v1.size(); i++) copy[i] = v1[i] / num;
-
-		return copy;
-	}
-//}========================================================================================================
-
-
-//{========================================================================================================
-/**
- *	@brief output operator
- *	@detailed print Vector to os stream
- *	@param[in] os print stream
- *	@param[in] v1 Vector to print
- */
-template <typename data>
-ostream& operator << (ostream& os, const Vector<data> &v1)
-	{
-		for(int i = 0; i < v1.size(); ++i)
-			os << v1[i] << ' ';
-		return os;
-	}
-//}========================================================================================================
+#include "binary_operators.cpp"
 
 #endif

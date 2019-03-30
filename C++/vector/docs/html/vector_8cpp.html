@@ -73,6 +73,9 @@ $(function() {
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;den_exception/den_exception.cpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="bool__vector_8cpp.html">bool_vector.cpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="binary__operators_8cpp.html">binary_operators.cpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for vector.cpp:</div>
 <div class="dyncontent">
@@ -97,6 +100,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a0e56521e7ab51dee5a9705e070406265"><td class="memItemLeft" align="right" valign="top"><a id="a0e56521e7ab51dee5a9705e070406265"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>VECTOR_H</b></td></tr>
 <tr class="separator:a0e56521e7ab51dee5a9705e070406265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0881bd0885196a40e66cc0f9ff435723"><td class="memItemLeft" align="right" valign="top"><a id="a0881bd0885196a40e66cc0f9ff435723"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEN_EXCEPTION</b>(message,  exc_code)&#160;&#160;&#160;DenException(__FILE__, __func__, __LINE__, message, exc_code)</td></tr>
+<tr class="separator:a0881bd0885196a40e66cc0f9ff435723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6bca16ed021b1e211fde8669758f199"><td class="memItemLeft" align="right" valign="top"><a id="ab6bca16ed021b1e211fde8669758f199"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NEW</b>&#160;&#160;&#160;new(__FILE__, __func__, __LINE__, memory_leak)</td></tr>
 <tr class="separator:ab6bca16ed021b1e211fde8669758f199"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,33 +111,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a91de3367c7ac91dcef717acf25466d5a"><td class="memItemLeft" align="right" valign="top"><a id="a91de3367c7ac91dcef717acf25466d5a"></a>
-ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>memory_leak</b> (&quot;memory_leak/memory_leak.txt&quot;)</td></tr>
-<tr class="separator:a91de3367c7ac91dcef717acf25466d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c8eb33fc89878de6c7a2d869e451482"><td class="memTemplParams" colspan="2">template&lt;typename data &gt; </td></tr>
-<tr class="memitem:a8c8eb33fc89878de6c7a2d869e451482"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classVector.html">Vector</a>&lt; data &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="vector_8cpp.html#a8c8eb33fc89878de6c7a2d869e451482">operator+</a> (const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;v1, const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;v2)</td></tr>
-<tr class="memdesc:a8c8eb33fc89878de6c7a2d869e451482"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> + <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a>  <a href="#a8c8eb33fc89878de6c7a2d869e451482">More...</a><br /></td></tr>
-<tr class="separator:a8c8eb33fc89878de6c7a2d869e451482"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ca69957de672a02ef4d157935f767f4"><td class="memTemplParams" colspan="2">template&lt;typename data &gt; </td></tr>
-<tr class="memitem:a3ca69957de672a02ef4d157935f767f4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classVector.html">Vector</a>&lt; data &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="vector_8cpp.html#a3ca69957de672a02ef4d157935f767f4">operator-</a> (const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;v1, const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;v2)</td></tr>
-<tr class="memdesc:a3ca69957de672a02ef4d157935f767f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> - <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a>  <a href="#a3ca69957de672a02ef4d157935f767f4">More...</a><br /></td></tr>
-<tr class="separator:a3ca69957de672a02ef4d157935f767f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c9a4f60cd2206296324dfef954befbc"><td class="memTemplParams" colspan="2">template&lt;typename data &gt; </td></tr>
-<tr class="memitem:a4c9a4f60cd2206296324dfef954befbc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classVector.html">Vector</a>&lt; data &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="vector_8cpp.html#a4c9a4f60cd2206296324dfef954befbc">operator*</a> (const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;v1, double num)</td></tr>
-<tr class="memdesc:a4c9a4f60cd2206296324dfef954befbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> * const  <a href="#a4c9a4f60cd2206296324dfef954befbc">More...</a><br /></td></tr>
-<tr class="separator:a4c9a4f60cd2206296324dfef954befbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4e34c29cad6934dee13b462a132d067"><td class="memTemplParams" colspan="2">template&lt;typename data &gt; </td></tr>
-<tr class="memitem:ad4e34c29cad6934dee13b462a132d067"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classVector.html">Vector</a>&lt; data &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="vector_8cpp.html#ad4e34c29cad6934dee13b462a132d067">operator*</a> (double num, const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;v1)</td></tr>
-<tr class="memdesc:ad4e34c29cad6934dee13b462a132d067"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator const * <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a>  <a href="#ad4e34c29cad6934dee13b462a132d067">More...</a><br /></td></tr>
-<tr class="separator:ad4e34c29cad6934dee13b462a132d067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5650565de6a917334f6c6b149264567d"><td class="memTemplParams" colspan="2">template&lt;typename data &gt; </td></tr>
-<tr class="memitem:a5650565de6a917334f6c6b149264567d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classVector.html">Vector</a>&lt; data &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="vector_8cpp.html#a5650565de6a917334f6c6b149264567d">operator/</a> (const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;v1, double num)</td></tr>
-<tr class="memdesc:a5650565de6a917334f6c6b149264567d"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> / const  <a href="#a5650565de6a917334f6c6b149264567d">More...</a><br /></td></tr>
-<tr class="separator:a5650565de6a917334f6c6b149264567d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad88571640403970e666e705500cd88fa"><td class="memTemplParams" colspan="2">template&lt;typename data &gt; </td></tr>
-<tr class="memitem:ad88571640403970e666e705500cd88fa"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="vector_8cpp.html#ad88571640403970e666e705500cd88fa">operator&lt;&lt;</a> (ostream &amp;os, const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;v1)</td></tr>
-<tr class="memdesc:ad88571640403970e666e705500cd88fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">output operator  print <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> to os stream  <a href="#ad88571640403970e666e705500cd88fa">More...</a><br /></td></tr>
-<tr class="separator:ad88571640403970e666e705500cd88fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3799ff09b5cbeeb120156b2c804ca8"><td class="memItemLeft" align="right" valign="top"><a id="aba3799ff09b5cbeeb120156b2c804ca8"></a>
+std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>memory_leak</b> (&quot;memory_leak/memory_leak.txt&quot;)</td></tr>
+<tr class="separator:aba3799ff09b5cbeeb120156b2c804ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>class description file vector </p>
@@ -154,247 +136,7 @@ ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>memory_leak</b> (
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">memory_leak &lt;&lt; <span class="stringliteral">&quot;D &quot;</span> &lt;&lt; __FILE__ &lt;&lt; <span class="stringliteral">&quot;|&quot;</span> &lt;&lt; __func__ &lt;&lt; <span class="stringliteral">&quot;|&quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; x &lt;&lt; endl; \</div><div class="line">                delete x;</div></div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a4c9a4f60cd2206296324dfef954befbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c9a4f60cd2206296324dfef954befbc">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename data &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classVector.html">Vector</a>&lt;data&gt; operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>num</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>operator <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> * const </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">v1</td><td>Vector1 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>const </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>result <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> </dd></dl>
-
-</div>
-</div>
-<a id="ad4e34c29cad6934dee13b462a132d067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4e34c29cad6934dee13b462a132d067">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename data &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classVector.html">Vector</a>&lt;data&gt; operator* </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>num</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>operator const * <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>const </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">v1</td><td>Vector1 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>result <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> </dd></dl>
-
-</div>
-</div>
-<a id="a8c8eb33fc89878de6c7a2d869e451482"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c8eb33fc89878de6c7a2d869e451482">&#9670;&nbsp;</a></span>operator+()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename data &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classVector.html">Vector</a>&lt;data&gt; operator+ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>operator <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> + <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">v1</td><td>Vector1 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">v2</td><td>Vector2 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>result <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> </dd></dl>
-
-</div>
-</div>
-<a id="a3ca69957de672a02ef4d157935f767f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ca69957de672a02ef4d157935f767f4">&#9670;&nbsp;</a></span>operator-()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename data &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classVector.html">Vector</a>&lt;data&gt; operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>operator <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> - <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">v1</td><td>Vector1 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">v2</td><td>Vector2 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>result <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> </dd></dl>
-
-</div>
-</div>
-<a id="a5650565de6a917334f6c6b149264567d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5650565de6a917334f6c6b149264567d">&#9670;&nbsp;</a></span>operator/()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename data &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classVector.html">Vector</a>&lt;data&gt; operator/ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>num</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>operator <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> / const </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">v1</td><td>Vector1 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>const </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>result <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> </dd></dl>
-
-</div>
-</div>
-<a id="ad88571640403970e666e705500cd88fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad88571640403970e666e705500cd88fa">&#9670;&nbsp;</a></span>operator<<()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename data &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">ostream&amp; operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; data &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>output operator  print <a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> to os stream </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">os</td><td>print stream </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">v1</td><td><a class="el" href="classVector.html" title="Type Vector. Effective in speed, but spends a lot of memory. ">Vector</a> to print </td></tr>
-  </table>
-  </dd>
-</dl>
-
+<b>Value:</b><div class="fragment"><div class="line">memory_leak &lt;&lt; <span class="stringliteral">&quot;D &quot;</span> &lt;&lt; __FILE__ &lt;&lt; <span class="stringliteral">&quot;|&quot;</span> &lt;&lt; __func__ &lt;&lt; <span class="stringliteral">&quot;|&quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; x &lt;&lt; std::endl; \</div><div class="line">                delete x;</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

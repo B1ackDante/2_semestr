@@ -1,0 +1,343 @@
+\hypertarget{classVector_3_01bool_01_4}{}\section{Vector$<$ bool $>$ Class Template Reference}
+\label{classVector_3_01bool_01_4}\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+
+
+Type \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$}. Effective in speed, but spends a lot of memory.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classVector_3_01bool_01_4_1_1BoolReference}{Bool\+Reference}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVector_3_01bool_01_4_af047ef99ecd696a68c9d2897b7a61ef0}\label{classVector_3_01bool_01_4_af047ef99ecd696a68c9d2897b7a61ef0}} 
+\hyperlink{classVector_3_01bool_01_4_af047ef99ecd696a68c9d2897b7a61ef0}{Vector} ()
+\begin{DoxyCompactList}\small\item\em constructor  create a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} with size = 0 \end{DoxyCompactList}\item 
+\hyperlink{classVector_3_01bool_01_4_ad097ece2d95bca611f81522a6cd2f054}{Vector} (int \hyperlink{classVector_3_01bool_01_4_acb9a245334b171ea1ad0d9bda20da76e}{size})  throw (\+Den\+Exception)
+\begin{DoxyCompactList}\small\item\em constructor  creates a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} with a defined size \end{DoxyCompactList}\item 
+\hyperlink{classVector_3_01bool_01_4_a1c11bbbd5699e7abaa5a4baf80e51efe}{Vector} (int \hyperlink{classVector_3_01bool_01_4_acb9a245334b171ea1ad0d9bda20da76e}{size}, bool value)  throw (\+Den\+Exception)
+\begin{DoxyCompactList}\small\item\em constructor  creates a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} with a defined size. All numbers in the vector are equal value \end{DoxyCompactList}\item 
+\hyperlink{classVector_3_01bool_01_4_ae05a09ad6a197974abbf6ed0e07289b9}{Vector} (int \hyperlink{classVector_3_01bool_01_4_acb9a245334b171ea1ad0d9bda20da76e}{size}, bool $\ast$arr)  throw (\+Den\+Exception)
+\begin{DoxyCompactList}\small\item\em constructor  creates a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} with a defined size. Numbers in the \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} are equal numbers in the array arr \end{DoxyCompactList}\item 
+\hyperlink{classVector_3_01bool_01_4_a2dff535956e32681b2fa7772123d8a62}{Vector} (const \hyperlink{classVector}{Vector} \&arr)  throw (\+Den\+Exception)
+\begin{DoxyCompactList}\small\item\em copy constructor  deeply copies one \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} to another \end{DoxyCompactList}\item 
+\hyperlink{classVector_3_01bool_01_4_af834cd016e8f08054b45f911e408397b}{Vector} (\hyperlink{classVector}{Vector} \&\&arr)  throw (\+Den\+Exception)
+\begin{DoxyCompactList}\small\item\em move constructor  superficially copies the temporary \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a9e56319ff8bc77cbdda7c508a680c04c}\label{classVector_3_01bool_01_4_a9e56319ff8bc77cbdda7c508a680c04c}} 
+\hyperlink{classVector_3_01bool_01_4_a9e56319ff8bc77cbdda7c508a680c04c}{$\sim$\+Vector} ()
+\begin{DoxyCompactList}\small\item\em destructor  free \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \end{DoxyCompactList}\item 
+Bool\+Reference \hyperlink{classVector_3_01bool_01_4_a0668d217d484d3486b4b70583b3a6f1f}{operator\mbox{[}$\,$\mbox{]}} (int index) const  throw (\+Den\+Exception)
+\begin{DoxyCompactList}\small\item\em index operator  returns the value of an item by its index \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \& \hyperlink{classVector_3_01bool_01_4_ad5616dff05cceca72ddb94463c3be844}{operator=} (const \hyperlink{classVector}{Vector} \&vector)  throw (\+Den\+Exception)
+\begin{DoxyCompactList}\small\item\em copy operator  deeply copies one \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} to another \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \& \hyperlink{classVector_3_01bool_01_4_a025822477d0628b78d8952b6fce63915}{operator=} (\hyperlink{classVector}{Vector} \&\&vector)  throw (\+Den\+Exception)
+\begin{DoxyCompactList}\small\item\em move operator  superficially copies the temporary \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \end{DoxyCompactList}\item 
+void \hyperlink{classVector_3_01bool_01_4_a8ea33e431ec6cd90840a392f84aefdae}{push\+\_\+back} (bool elem)  throw (\+Den\+Exception)
+\begin{DoxyCompactList}\small\item\em push  inserts an element at the end of a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \end{DoxyCompactList}\item 
+bool \hyperlink{classVector_3_01bool_01_4_a1cdf4ddfa0fe85a75b0a32767d969814}{pop\+\_\+back} (void)  throw (\+Den\+Exception)
+\begin{DoxyCompactList}\small\item\em pop  returns an element from the end of a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a1d1d0fe8ed29d8a689e9fe7aec95bc37}\label{classVector_3_01bool_01_4_a1d1d0fe8ed29d8a689e9fe7aec95bc37}} 
+void \hyperlink{classVector_3_01bool_01_4_a1d1d0fe8ed29d8a689e9fe7aec95bc37}{clear} (void)
+\begin{DoxyCompactList}\small\item\em clear \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \end{DoxyCompactList}\item 
+int \hyperlink{classVector_3_01bool_01_4_acb9a245334b171ea1ad0d9bda20da76e}{size} (void) const
+\item 
+bool \hyperlink{classVector_3_01bool_01_4_a830fa9ddb2e3b9b000ecd6a15f51f6c2}{empty} (void)
+\begin{DoxyCompactList}\small\item\em checks if \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} is empty \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classVector_3_01bool_01_4_afebfb559bb1f4b771fe43b5d2a94a3d7}{increase} ()  throw ()
+\begin{DoxyCompactList}\small\item\em increases buffer  increases buffer by cap\+\_\+increase, if there is not enough space \end{DoxyCompactList}\item 
+bool \hyperlink{classVector_3_01bool_01_4_a39afbd4a74eac5e2eb4363eed1f98adf}{decrease} ()  throw ()
+\begin{DoxyCompactList}\small\item\em decrease buffer  decrease buffer by cap\+\_\+decrease, if a lot of free space \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVector_3_01bool_01_4_ae2183c11de877eb13209c6a5a593604f}\label{classVector_3_01bool_01_4_ae2183c11de877eb13209c6a5a593604f}} 
+int $\ast$ \hyperlink{classVector_3_01bool_01_4_ae2183c11de877eb13209c6a5a593604f}{buffer\+\_\+}
+\begin{DoxyCompactList}\small\item\em pointer to data buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a07895adb41b2c819f85640e35c0d4ae0}\label{classVector_3_01bool_01_4_a07895adb41b2c819f85640e35c0d4ae0}} 
+int \hyperlink{classVector_3_01bool_01_4_a07895adb41b2c819f85640e35c0d4ae0}{size\+\_\+}
+\begin{DoxyCompactList}\small\item\em number of elements in the buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_3_01bool_01_4_ac3da0e4580bca55cab445ed3f9c50f2d}\label{classVector_3_01bool_01_4_ac3da0e4580bca55cab445ed3f9c50f2d}} 
+int \hyperlink{classVector_3_01bool_01_4_ac3da0e4580bca55cab445ed3f9c50f2d}{capacity\+\_\+}
+\begin{DoxyCompactList}\small\item\em buffer capacity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a6fe84e4e9414012807ec5ccd49711e62}\label{classVector_3_01bool_01_4_a6fe84e4e9414012807ec5ccd49711e62}} 
+double \hyperlink{classVector_3_01bool_01_4_a6fe84e4e9414012807ec5ccd49711e62}{cap\+\_\+increase} = 2.\+0
+\begin{DoxyCompactList}\small\item\em buffer increase ratio \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVector_3_01bool_01_4_af050d33b0ff1d75bdf15909388fcf897}\label{classVector_3_01bool_01_4_af050d33b0ff1d75bdf15909388fcf897}} 
+double \hyperlink{classVector_3_01bool_01_4_af050d33b0ff1d75bdf15909388fcf897}{cap\+\_\+decrease} = 0.\+5
+\begin{DoxyCompactList}\small\item\em buffer decrease ratio \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$$>$\newline
+class Vector$<$ bool $>$}
+
+Type \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$}. Effective in speed, but spends a lot of memory. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_ad097ece2d95bca611f81522a6cd2f054}\label{classVector_3_01bool_01_4_ad097ece2d95bca611f81522a6cd2f054}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ bool $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption}) throw  Den\+Exception) }
+
+
+
+constructor  creates a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} with a defined size 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & size of \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Den\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a1c11bbbd5699e7abaa5a4baf80e51efe}\label{classVector_3_01bool_01_4_a1c11bbbd5699e7abaa5a4baf80e51efe}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ bool $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{bool}]{value }\end{DoxyParamCaption}) throw  Den\+Exception) }
+
+
+
+constructor  creates a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} with a defined size. All numbers in the vector are equal value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & size of \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \\
+\hline
+\mbox{\tt in}  & {\em value} & the value that fills the \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Den\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_ae05a09ad6a197974abbf6ed0e07289b9}\label{classVector_3_01bool_01_4_ae05a09ad6a197974abbf6ed0e07289b9}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ bool $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{bool $\ast$}]{arr }\end{DoxyParamCaption}) throw  Den\+Exception) }
+
+
+
+constructor  creates a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} with a defined size. Numbers in the \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} are equal numbers in the array arr 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & size of \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \\
+\hline
+\mbox{\tt in}  & {\em arr} & array that fills the \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Den\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a2dff535956e32681b2fa7772123d8a62}\label{classVector_3_01bool_01_4_a2dff535956e32681b2fa7772123d8a62}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ bool $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ bool $>$ \&}]{vec }\end{DoxyParamCaption}) throw  Den\+Exception) }
+
+
+
+copy constructor  deeply copies one \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} to another 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$}} & copy \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Den\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_af834cd016e8f08054b45f911e408397b}\label{classVector_3_01bool_01_4_af834cd016e8f08054b45f911e408397b}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ bool $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{\hyperlink{classVector}{Vector}$<$ bool $>$ \&\&}]{vec }\end{DoxyParamCaption}) throw  Den\+Exception) }
+
+
+
+move constructor  superficially copies the temporary \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classVector}{Vector}} & copy \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Den\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a39afbd4a74eac5e2eb4363eed1f98adf}\label{classVector_3_01bool_01_4_a39afbd4a74eac5e2eb4363eed1f98adf}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!decrease@{decrease}}
+\index{decrease@{decrease}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{decrease()}{decrease()}}
+{\footnotesize\ttfamily bool \hyperlink{classVector}{Vector}$<$ bool $>$\+::decrease (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw  ) \hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+decrease buffer  decrease buffer by cap\+\_\+decrease, if a lot of free space 
+
+\begin{DoxyReturn}{Returns}
+true if decrease success false if decrease error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a830fa9ddb2e3b9b000ecd6a15f51f6c2}\label{classVector_3_01bool_01_4_a830fa9ddb2e3b9b000ecd6a15f51f6c2}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!empty@{empty}}
+\index{empty@{empty}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool \hyperlink{classVector}{Vector}$<$ bool $>$\+::empty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+checks if \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} is empty 
+
+\begin{DoxyReturn}{Returns}
+true if \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} is empty false if \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} isn\textquotesingle{}t empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_afebfb559bb1f4b771fe43b5d2a94a3d7}\label{classVector_3_01bool_01_4_afebfb559bb1f4b771fe43b5d2a94a3d7}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!increase@{increase}}
+\index{increase@{increase}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{increase()}{increase()}}
+{\footnotesize\ttfamily bool \hyperlink{classVector}{Vector}$<$ bool $>$\+::increase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw  ) \hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+increases buffer  increases buffer by cap\+\_\+increase, if there is not enough space 
+
+\begin{DoxyReturn}{Returns}
+true if increase success false if increase error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_ad5616dff05cceca72ddb94463c3be844}\label{classVector_3_01bool_01_4_ad5616dff05cceca72ddb94463c3be844}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ bool $>$ \& \hyperlink{classVector}{Vector}$<$ bool $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ bool $>$ \&}]{vector }\end{DoxyParamCaption}) throw  Den\+Exception) }
+
+
+
+copy operator  deeply copies one \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} to another 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$}} & copy \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Den\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a025822477d0628b78d8952b6fce63915}\label{classVector_3_01bool_01_4_a025822477d0628b78d8952b6fce63915}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ bool $>$ \& \hyperlink{classVector}{Vector}$<$ bool $>$\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classVector}{Vector}$<$ bool $>$ \&\&}]{vector }\end{DoxyParamCaption}) throw  Den\+Exception) }
+
+
+
+move operator  superficially copies the temporary \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$}} & copy \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Den\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a0668d217d484d3486b4b70583b3a6f1f}\label{classVector_3_01bool_01_4_a0668d217d484d3486b4b70583b3a6f1f}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ bool $>$\+::Bool\+Reference \hyperlink{classVector}{Vector}$<$ bool $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const throw  Den\+Exception) }
+
+
+
+index operator  returns the value of an item by its index 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Den\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a1cdf4ddfa0fe85a75b0a32767d969814}\label{classVector_3_01bool_01_4_a1cdf4ddfa0fe85a75b0a32767d969814}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!pop\+\_\+back@{pop\+\_\+back}}
+\index{pop\+\_\+back@{pop\+\_\+back}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{pop\+\_\+back()}{pop\_back()}}
+{\footnotesize\ttfamily bool \hyperlink{classVector}{Vector}$<$ bool $>$\+::pop\+\_\+back (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) throw  Den\+Exception) }
+
+
+
+pop  returns an element from the end of a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} 
+
+\begin{DoxyReturn}{Returns}
+element 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Den\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_a8ea33e431ec6cd90840a392f84aefdae}\label{classVector_3_01bool_01_4_a8ea33e431ec6cd90840a392f84aefdae}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{push\+\_\+back()}{push\_back()}}
+{\footnotesize\ttfamily void \hyperlink{classVector}{Vector}$<$ bool $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{bool}]{elem }\end{DoxyParamCaption}) throw  Den\+Exception) }
+
+
+
+push  inserts an element at the end of a \hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em elem} & insert element \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Den\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classVector_3_01bool_01_4_acb9a245334b171ea1ad0d9bda20da76e}\label{classVector_3_01bool_01_4_acb9a245334b171ea1ad0d9bda20da76e}} 
+\index{Vector$<$ bool $>$@{Vector$<$ bool $>$}!size@{size}}
+\index{size@{size}!Vector$<$ bool $>$@{Vector$<$ bool $>$}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int \hyperlink{classVector}{Vector}$<$ bool $>$\+::size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classVector_3_01bool_01_4}{Vector$<$bool$>$} size 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{bool__vector_8cpp}{bool\+\_\+vector.\+cpp}\end{DoxyCompactItemize}
